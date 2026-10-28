@@ -238,3 +238,37 @@ select {
     color: hsl(var(--clr-white) / 0.25);
   }
 }
+
+/*----------------------------------*/
+/* Component Classes                */
+/*----------------------------------*/
+
+.large-button {
+  display: grid;
+  position: relative;
+  z-index: 1;
+  padding: 0 2em;
+  aspect-ratio: 1;
+  place-items: center;
+  text-decoration: none;
+  border-radius: 50%;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inline-size: 100%;
+    block-size: 100%;
+    background: hsl(var(--clr-white) / 0.15);
+    border-radius: inherit;
+    opacity: 0;
+    transition:
+      opacity 500ms linear,
+      transform 750ms ease-in-out;
+  }
+
+  &:is(:hover, :focus-visible)::after {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
