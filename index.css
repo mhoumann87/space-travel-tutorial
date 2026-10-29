@@ -310,3 +310,37 @@ select {
 .tab-list {
   --gap: 2rem;
 }
+
+.dot-indicators > * {
+  cursor: pointer;
+  border: 0;
+  border-radius: 50%;
+  padding: 0.5em;
+  background-color: hsl(var(--clr-white) / 0.25);
+
+  &:is(:hover, :focus-visible) {
+    background-color: hsl(var(--clr-white) / 0.5);
+  }
+
+  &[aria-selected='true'] {
+    background-color: hsl(var(--clr-white) / 1);
+  }
+}
+
+.number-indicators > * {
+  cursor: pointer;
+  border: 1px solid hsl(var(--clr-white) / 0.25);
+  border-radius: 50%;
+  padding: 0 1.5em;
+  aspect-ratio: 1;
+
+  &:is(:hover, :focus-visible) {
+    border-color: hsl(var(--clr-white) / 0.5);
+  }
+
+  &[aria-selected='true'] {
+    border-color: hsl(var(--clr-white) / 1);
+    background: hsl(var(--clr-white));
+    color: hsl(var(--clr-dark));
+  }
+}

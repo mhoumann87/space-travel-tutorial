@@ -155,7 +155,7 @@
           </nav>
         </div>
 
-        <div class="flex">
+        <div class="flex" style="--gap: 10rem">
           <div style="margin-block-start: 5rem">
             <!-- explore button -->
             <a
@@ -165,7 +165,7 @@
             >
           </div>
 
-          <div>
+          <div class="flow" style="--flow-space: 4rem">
             <!-- Tabs -->
             <div class="tab-list underline-indicators flex">
               <button
@@ -191,8 +191,30 @@
             </div>
 
             <!-- Dots -->
+            <div class="dot-indicators flex" style="--gap: 2rem">
+              <button aria-selected="true">
+                <span class="sr-only">Slide title</span>
+              </button>
+              <button aria-selected="false">
+                <span class="sr-only">Slide title</span>
+              </button>
+              <button aria-selected="false">
+                <span class="sr-only">Slide title</span>
+              </button>
+            </div>
 
             <!-- Numbers -->
+            <div class="number-indicators flex">
+              <button class="bg-dark text-white" aria-selected="true">1</button>
+
+              <button class="bg-dark text-white" aria-selected="false">
+                2
+              </button>
+
+              <button class="bg-dark text-white" aria-selected="false">
+                3
+              </button>
+            </div>
           </div>
         </div>
       </section>
