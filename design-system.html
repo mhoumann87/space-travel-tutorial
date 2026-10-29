@@ -133,7 +133,27 @@
         <h2 class="numbered-title"><span>03</span>Interactive elements</h2>
 
         <!-- Navigation -->
-        <div></div>
+        <div>
+          <nav aria-label="primary-navigation">
+            <ul class="primary-navigation underline-indicators flex">
+              <li class="active">
+                <a href="#" class="uppercase text-white letterspacing-2"
+                  ><span>00</span>Active</a
+                >
+              </li>
+              <li>
+                <a href="#" class="uppercase text-white letterspacing-2"
+                  ><span>01</span>Hovered</a
+                >
+              </li>
+              <li>
+                <a href="#" class="uppercase text-white letterspacing-2"
+                  ><span>02</span>Idle</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
 
         <div class="flex">
           <div style="margin-block-start: 5rem">
@@ -147,6 +167,28 @@
 
           <div>
             <!-- Tabs -->
+            <div class="tab-list underline-indicators flex">
+              <button
+                aria-selected="true"
+                class="uppercase text-accent bg-dark letterspacing-2ff-sans-cond"
+              >
+                Moon
+              </button>
+
+              <button
+                aria-selected="false"
+                class="uppercase text-accent bg-dark letterspacing-2ff-sans-cond"
+              >
+                Mars
+              </button>
+
+              <button
+                aria-selected="false"
+                class="uppercase text-accent bg-dark letterspacing-2ff-sans-cond"
+              >
+                Europa
+              </button>
+            </div>
 
             <!-- Dots -->
 
