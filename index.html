@@ -21,6 +21,9 @@
       type="image/x-icon"
     />
 
+    <!-- link to javascript -->
+    <script src="index.js" defer></script>
+
     <title>Space Tourism - Home</title>
   </head>
   <body class="home">
@@ -30,9 +33,21 @@
           <img src="./assets/shared/logo.svg" alt="" class="logo" />
         </a>
       </div>
-      <!--
-       <nav aria-label="primary navigation">
-        <ul class="primary-navigation flex underline-indicators">
+
+      <button
+        class="mobile-nav-toggle"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <nav aria-label="primary navigation">
+        <ul
+          id="primary-navigation"
+          class="primary-navigation flex underline-indicators"
+          data-visible="false"
+        >
           <li class="active">
             <a
               class="ff-sans-cond text-white letterspacing-2"
@@ -63,7 +78,7 @@
           </li>
         </ul>
       </nav>
-    --></header>
+    </header>
 
     <main class="grid-wrapper grid-wrapper--home">
       <div>
@@ -88,7 +103,5 @@
         >
       </div>
     </main>
-
-    <script src="index.js"></script>
   </body>
 </html>

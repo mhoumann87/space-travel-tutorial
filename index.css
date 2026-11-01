@@ -82,6 +82,7 @@ body {
   min-block-size: 100svh;
   display: grid;
   grid-template-rows: min-content 1fr;
+  overflow-x: hidden;
 }
 
 /* Image max-size */
@@ -328,12 +329,78 @@ select {
   }
 }
 
+/* primary-header */
+.primary-header {
+  justify-content: space-between;
+  align-items: center;
+
+  @media (width > 45rem) {
+    &::after {
+      content: '';
+      display: block;
+      position: relative;
+      height: 1px;
+      background: hsl(var(--clr-white) / 0.25);
+      margin-inline-end: -2.5rem;
+      inline-size: 100%;
+      order: 1;
+    }
+  }
+
+  & nav {
+    order: 2;
+  }
+}
+
+.logo {
+  margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
+}
+
 .primary-navigation {
-  --gap: 8rem;
+  gap: clamp(1.5rem, 5vw, 3.5rem);
   --underline-gap: 2rem;
   list-style: none;
   padding: 0;
   margin: 0;
+  background-color: hsl(var(--clr-dark) / 0.9);
+
+  @supports (backdrop-filter: blur(1rem)) {
+    background-color: hsl(var(--clr-white) / 0.05);
+    backdrop-filter: blur(2rem);
+  }
+
+  @media (width >= 35rem) {
+    padding-inline: clamp(3rem, 7vw, 7rem);
+  }
+
+  @media (width >= 45rem) {
+    margin-block: 2rem;
+  }
+
+  @media (width > 35rem) and (width < 45rem) {
+    & a > span {
+      display: none;
+    }
+  }
+
+  @media (width < 35rem) {
+    --underline-gap: 0.5rem;
+    flex-direction: column;
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 0 20%;
+    padding: min(20rem, 15vh) 2rem;
+    transform: translateX(100%);
+    transition: transform 500ms ease-in-out;
+
+    &.underline-indicators > .active {
+      border: 0;
+    }
+
+    &[data-visible='true'] {
+      transform: translateX(0);
+    }
+  }
 
   a {
     text-decoration: none;
@@ -342,6 +409,34 @@ select {
       font-weight: 700;
       margin-inline-end: 0.5em;
     }
+  }
+}
+
+.mobile-nav-toggle {
+  display: none;
+
+  @media (width < 35rem) {
+    display: block;
+    position: absolute;
+    z-index: 2000;
+    top: 2rem;
+    right: 1rem;
+    background-color: transparent;
+    border: 0;
+    background-image: url('./assets/shared/icon-hamburger.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    block-size: 1.5rem;
+    aspect-ratio: 1;
+  }
+
+  &[aria-expanded='true'] {
+    background-image: url('./assets/shared/icon-close.svg');
+  }
+
+  &:is(:focus-visible) {
+    outline: 2px solid lightblue;
+    outline-offset: 5px;
   }
 }
 
